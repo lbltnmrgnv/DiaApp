@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "30194929746",
+    "firebase_url": "https://diaapp-2dbee-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "diaapp-2dbee",
+    "storage_bucket": "diaapp-2dbee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:30194929746:android:6bbbd241b915b9c3b88f8b",
+        "android_client_info": {
+          "package_name": "com.example.diaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "30194929746-5j9rgkkf7772k8erd7520rdvur0dkk5h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKvHKPgcw6tSXe3XUJnYdSnMPCRc88uVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "30194929746-5j9rgkkf7772k8erd7520rdvur0dkk5h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
