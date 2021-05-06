@@ -3,13 +3,15 @@
     package="com.example.diaapp">
 
     <application
+        android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DiaApp"
-        android:fullBackupContent=""
-        android:allowBackup="true">
+        android:theme="@style/Theme.DiaApp">
+        <activity android:name=".AddFoodActivity"/>
+        <activity android:name=".DiaryActivity" />
         <activity android:name=".RecipesActivity" />
         <activity android:name=".CalcActivity" />
         <activity

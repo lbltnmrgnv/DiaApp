@@ -21,5 +21,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        val diary_bnt : Button = findViewById(R.id.diary_btn)
+        diary_bnt.setOnClickListener {
+            val intent = Intent(this@MainActivity, DiaryActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }
