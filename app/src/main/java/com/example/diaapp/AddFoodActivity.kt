@@ -1,9 +1,11 @@
 package com.example.diaapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
 
@@ -20,6 +22,12 @@ class AddFoodActivity : AppCompatActivity() {
         btn_save = findViewById(R.id.btn_save)
         btn_save.setOnClickListener {
             saveProduct()
+        }
+        val home_btn: ImageButton = findViewById(R.id.home_btn)
+        home_btn.setOnClickListener {
+            val intent = Intent(this@AddFoodActivity, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 

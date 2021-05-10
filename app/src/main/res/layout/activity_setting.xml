@@ -1,25 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CalcActivity"
+    tools:context=".SettingActivity"
     android:background="@drawable/gradient">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Калькулятор"
-        android:textColor="#fff"
-        android:textStyle="bold"
-        />
-    <Button
-        android:id="@+id/addProduct_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Добавить продукт"
-        />
     <ImageButton
         android:background="@drawable/ic_home"
         android:layout_gravity="bottom"
@@ -30,4 +17,5 @@
         android:textColor="#fff"
         android:textStyle="bold"
         android:contentDescription="@null" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

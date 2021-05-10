@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".DiaryActivity"
     android:background="@drawable/gradient">
 
-    <com.google.android.material.textview.MaterialTextView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#fff"
         android:textStyle="bold"
         />
-    <com.google.android.material.button.MaterialButton
+    <ImageButton
+        android:background="@drawable/ic_home"
+        android:layout_gravity="bottom"
         android:id="@+id/home_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home"
+        android:layout_margin="15dp"
         android:textColor="#fff"
-        android:textStyle="bold"/>
-</LinearLayout>
+        android:textStyle="bold"
+        android:contentDescription="@null" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_btn"
+        android:layout_margin="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/add_diary_icon"
+        app:pressedTranslationZ="12dp"
+        android:elevation="12dp"
+        android:contentDescription="@null"
+        tools:targetApi="lollipop" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
