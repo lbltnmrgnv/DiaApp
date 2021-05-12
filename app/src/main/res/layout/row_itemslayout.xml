@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="15dp"
+    android:background="@drawable/custom"
+    >
+
+
+    <TextView
+        android:id="@+id/dish_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_centerVertical="true"
+        android:textColor="#FFF"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/xe_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_centerVertical="true"
+        android:textColor="#FFF"
+        android:textSize="20sp"
+        android:layout_toStartOf="@id/diary_delete"
+        android:layout_toLeftOf="@id/diary_delete"
+        tools:ignore="RelativeOverlap" />
+    <TextView
+        android:id="@+id/time_textView"
+        android:layout_width="match_parent"
+        android:layout_height="13dp"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold"
+        android:textColor="#FFF"
+        android:text="12 мая 21 года 23:08"
+        android:textSize="10sp"
+        tools:ignore="SmallSp" />
+
+    <ImageButton
+        android:padding="15dp"
+        android:id="@+id/diary_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/xe_textView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@android:color/transparent"
+        android:gravity="end"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        tools:ignore="ContentDescription" />
+
+</RelativeLayout>

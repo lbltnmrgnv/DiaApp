@@ -7,18 +7,24 @@
     android:orientation="vertical">
 
     <EditText
+        android:id="@+id/dish_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:autofillHints="Продукт"
         android:inputType="text"
+        android:ems="10"
+        android:text="салам"
         android:hint="Введите блюдо"
-        tools:ignore="LabelFor" />
+        tools:ignore="LabelFor"
+        android:importantForAutofill="no" />
     <EditText
+        android:id="@+id/dish_xe_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:autofillHints="XE"
         android:inputType="number"
+        android:ems="10"
+        android:text="алейкум"
         android:hint="И количество содержащихся ХЕ"
-        tools:ignore="LabelFor" />
+        tools:ignore="LabelFor"
+        android:importantForAutofill="no" />
 
 </LinearLayout>

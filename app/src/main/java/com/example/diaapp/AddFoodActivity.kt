@@ -10,21 +10,21 @@ import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
 
 class AddFoodActivity : AppCompatActivity() {
-    lateinit var editProduct: EditText
-    lateinit var editWeight: EditText
-    lateinit var btn_save: Button
+    private lateinit var editProduct: EditText
+    private lateinit var editWeight: EditText
+    private lateinit var btnSave: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_food)
 
         editProduct = findViewById(R.id.editProduct)
         editWeight = findViewById(R.id.editWeight)
-        btn_save = findViewById(R.id.btn_save)
-        btn_save.setOnClickListener {
+        btnSave = findViewById(R.id.btn_save)
+        btnSave.setOnClickListener {
             saveProduct()
         }
-        val home_btn: ImageButton = findViewById(R.id.home_btn)
-        home_btn.setOnClickListener {
+        val homeBtn: ImageButton = findViewById(R.id.home_btn)
+        homeBtn.setOnClickListener {
             val intent = Intent(this@AddFoodActivity, MainActivity::class.java)
             startActivity(intent)
             finish()
@@ -40,7 +40,7 @@ class AddFoodActivity : AppCompatActivity() {
         }
 
         val ref = FirebaseDatabase.getInstance().getReference("Products")
-        val productId = ref.push() .key
+        val productId = ref.push().key
         val product = Product(productId,productName,productWeight)
         if (productId != null) {
             ref.child(productId).setValue(product).addOnCompleteListener {

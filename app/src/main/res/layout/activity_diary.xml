@@ -6,13 +6,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".DiaryActivity"
     android:background="@drawable/gradient">
-
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#fff"
-        android:textStyle="bold"
-        />
+        android:orientation="vertical"
+        android:layout_marginBottom="70dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Дневник питания"
+            android:textColor="#FFF"
+            android:textSize="30sp"
+            android:textStyle="bold|italic"
+            android:gravity="center"
+            />
+        <ListView
+            android:id="@+id/item_listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:scrollbars="none"
+            android:paddingRight="10dp"/>
+    </LinearLayout>
     <ImageButton
         android:background="@drawable/ic_home"
         android:layout_gravity="bottom"
