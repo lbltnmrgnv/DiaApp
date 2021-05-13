@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="15dp"
+    android:padding="10dp"
     android:background="@drawable/custom"
     >
 
@@ -33,15 +33,14 @@
         android:id="@+id/time_textView"
         android:layout_width="match_parent"
         android:layout_height="13dp"
-        android:layout_marginTop="40dp"
+        android:text="2020202020202"
+        android:layout_marginTop="30dp"
         android:textStyle="bold"
         android:textColor="#FFF"
-        android:text="12 мая 21 года 23:08"
-        android:textSize="10sp"
+        android:textSize="9sp"
         tools:ignore="SmallSp" />
-
     <ImageButton
-        android:padding="15dp"
+        android:padding="10dp"
         android:id="@+id/diary_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

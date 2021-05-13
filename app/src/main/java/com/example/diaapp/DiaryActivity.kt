@@ -1,12 +1,16 @@
 package com.example.diaapp
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
+import java.text.SimpleDateFormat
+import java.util.*
 import kotlin.collections.HashMap
 
 class DiaryActivity : AppCompatActivity(), UpdDelDiary {
@@ -14,6 +18,7 @@ class DiaryActivity : AppCompatActivity(), UpdDelDiary {
     var diaryList: MutableList<DiaryModel>? = null
     private lateinit var adapter: DiaryAdapter
     private var listVeiwItem :ListView? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,22 +33,25 @@ class DiaryActivity : AppCompatActivity(), UpdDelDiary {
         val fab : FloatingActionButton = findViewById(R.id.fab_btn)
         listVeiwItem= findViewById(R.id.item_listView)
         database = FirebaseDatabase.getInstance().reference
-        val dishEdit: EditText? = findViewById(R.id.dish_edit) as? EditText
-        val dishEditXe: EditText? = findViewById(R.id.dish_xe_edit) as? EditText
+
 
         fab.setOnClickListener {
-            val alertEditText = layoutInflater.inflate(R.layout.alert_edit_texts, null)
-
+            val alertEditText = LayoutInflater.from(this).inflate(R.layout.alert_edit_texts,null)
             val alertDialog = AlertDialog.Builder(this)
-            .setMessage("Введите Блюдо и количество ХЕ")
-            .setTitle("Нажмите чтобы добавить")
+
+            val dishEdit = alertEditText.findViewById<EditText>(R.id.dish_edit)
+            val dishEditXe = alertEditText.findViewById<EditText>(R.id.dish_xe_edit)
+
+            alertDialog.setMessage("Введите Блюдо и количество ХЕ")
+            .setTitle("Добавление блюда в дневник")
             .setView(alertEditText)
-            val diaryItemData = DiaryModel.createList()
-            diaryItemData.itemDishDiary = dishEdit?.text.toString().trim()
-            diaryItemData.itemXeDiary = dishEditXe?.text.toString().trim()
-            alertDialog.setPositiveButton("Add"){ dialog, _ ->
 
 
+
+            alertDialog.setPositiveButton("Добавить"){ dialog, _ ->
+                val diaryItemData = DiaryModel.createList()
+                diaryItemData.itemDishDiary = dishEdit.text.toString()
+                diaryItemData.itemXeDiary = dishEditXe.text.toString()
                 val newItemData = database.child("Diary").push()
                 diaryItemData.uid = newItemData.key
 
@@ -70,20 +78,25 @@ class DiaryActivity : AppCompatActivity(), UpdDelDiary {
         })
     }
 
+    @SuppressLint("SimpleDateFormat")
     private fun addItemToList(snapshot: DataSnapshot) {
         val items = snapshot.children.iterator()
+        //val diaryTime = SimpleDateFormat("yyyy/MM/dd HH:mm")
+        //val cal = Calendar.getInstance()
         if (items.hasNext()){
             val toDoIndexedValue = items.next()
             val itemsIterator = toDoIndexedValue.children.iterator()
 
             while (itemsIterator.hasNext()){
+                //time.text = diaryTime.format(cal.time).toString()
                 val currentItem = itemsIterator.next()
                 val diaryItemData = DiaryModel.createList()
                 val map = currentItem.value as HashMap<*, *>
                 diaryItemData.uid = currentItem.key
-                diaryItemData.itemDishDiary = map["itemDishDiary"] as? String
-                diaryItemData.itemXeDiary = map["itemXeDiary"] as? String
+                diaryItemData.itemDishDiary = map["itemDishDiary"] as String?
+                diaryItemData.itemXeDiary = map["itemXeDiary"] as String?
                 diaryList!!.add(diaryItemData)
+
             }
         }
         adapter.notifyDataSetChanged()

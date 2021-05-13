@@ -7,4 +7,5 @@ class DiaryModel {
     var uid: String? = null
     var itemDishDiary: String? = null
     var itemXeDiary: String? = null
+
 }

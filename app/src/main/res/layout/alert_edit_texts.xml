@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:inputType="text"
         android:ems="10"
-        android:text="салам"
+
         android:hint="Введите блюдо"
         tools:ignore="LabelFor"
         android:importantForAutofill="no" />
@@ -22,9 +22,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:text="алейкум"
-        android:hint="И количество содержащихся ХЕ"
+        android:hint="Сколько ХЕ содержалось в блюде"
         tools:ignore="LabelFor"
         android:importantForAutofill="no" />
-
 </LinearLayout>
