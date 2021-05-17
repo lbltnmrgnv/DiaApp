@@ -1,6 +1,4 @@
 package com.example.diaapp
-
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,9 +7,8 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
-import java.text.SimpleDateFormat
-import java.util.*
 import kotlin.collections.HashMap
+
 
 class DiaryActivity : AppCompatActivity(), UpdDelDiary {
     private lateinit var database: DatabaseReference
@@ -78,7 +75,6 @@ class DiaryActivity : AppCompatActivity(), UpdDelDiary {
         })
     }
 
-    @SuppressLint("SimpleDateFormat")
     private fun addItemToList(snapshot: DataSnapshot) {
         val items = snapshot.children.iterator()
         //val diaryTime = SimpleDateFormat("yyyy/MM/dd HH:mm")
