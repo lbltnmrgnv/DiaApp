@@ -7,19 +7,45 @@
     tools:context=".CalcActivity"
     android:background="@drawable/gradient">
 
-    <TextView
+    <EditText
+        android:id="@+id/product_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Калькулятор"
-        android:textColor="#fff"
-        android:textStyle="bold"
+        android:hint="Продукт"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        tools:ignore="LabelFor" />
+    <EditText
+        android:id="@+id/gram_search"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Грамовка"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        tools:ignore="LabelFor"
         />
     <Button
-        android:id="@+id/addProduct_btn"
-        android:layout_width="match_parent"
+        android:layout_marginTop="40dp"
+        android:id="@+id/decision_btn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Добавить продукт"
+        android:text="Решение"
         />
+    <TextView
+        android:id="@+id/product_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <ImageButton
+        android:id="@+id/addProduct_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="Добавить продукт"
+        android:src="@drawable/add_diary_icon"
+        android:layout_gravity="bottom|end"
+        android:background="#00FFFFFF"
+        android:layout_margin="15dp"
+        tools:ignore="ContentDescription" />
     <ImageButton
         android:background="@drawable/ic_home"
         android:layout_gravity="bottom"
@@ -27,7 +53,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:textColor="#fff"
-        android:textStyle="bold"
         android:contentDescription="@null" />
+    <TextView
+        android:id="@+id/gram_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#FFF"
+        android:textSize="20sp"
+        android:text="yoyoyoyoyo"
+        android:layout_gravity="center|bottom"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

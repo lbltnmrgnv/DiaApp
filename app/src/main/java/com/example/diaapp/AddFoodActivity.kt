@@ -31,7 +31,7 @@ class AddFoodActivity : AppCompatActivity() {
         }
     }
 
-    private fun saveProduct() {
+     private fun saveProduct() {
         val productName = editProduct.text.toString().trim()
         val productWeight = editWeight.text.toString().toInt()
         if(productName.isEmpty()){
@@ -47,5 +47,7 @@ class AddFoodActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Продукт был сохранен", Toast.LENGTH_SHORT).show()
             }
         }
+
     }
+
 }
