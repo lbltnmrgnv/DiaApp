@@ -4,8 +4,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SettingActivity"
-    android:background="@drawable/gradient">
+    android:background="@drawable/gradient"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="15dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Информация"
+        android:layout_gravity="center|top"
+        android:textSize="30sp"
+        android:textColor="#FFF"
 
+        />
+
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/infoText"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        />
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/infoText2"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/infoText3"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            />
+    </LinearLayout>
     <ImageButton
         android:background="@drawable/ic_home"
         android:layout_gravity="bottom"

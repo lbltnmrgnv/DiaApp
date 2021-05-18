@@ -18,6 +18,7 @@ class CalcActivity : AppCompatActivity() {
     private lateinit var productSearch: EditText
     private lateinit var gramSearch: EditText
     private lateinit var gramResult:TextView
+    private lateinit var sumResult: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +35,8 @@ class CalcActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        sumResult = findViewById(R.id.xeSum)
       productSearch = findViewById(R.id.product_search)
       gramSearch = findViewById(R.id.gram_search)
       decisionBtn = findViewById(R.id.decision_btn)
@@ -42,9 +45,15 @@ class CalcActivity : AppCompatActivity() {
           retrieveWeightFromDB()
           productSearch.text.clear()
           gramSearch.text.clear()
+         /* var sum = 0.0
+          val xeSum = gramResult.text.toString().toDouble()
+          sum += xeSum
+          sumResult.text = sum.toString()*/
+
       }
 
     }
+
 
 
     @SuppressLint("DefaultLocale")
@@ -53,7 +62,6 @@ class CalcActivity : AppCompatActivity() {
         val gramSch = gramSearch.text.toString().toInt()
         val df = DecimalFormat("#.##")
         df.roundingMode = RoundingMode.CEILING
-
         val ref = FirebaseDatabase.getInstance().getReference("Products")
         val query = ref.orderByChild("productName").equalTo(prodSch)
         query.addValueEventListener(object : ValueEventListener {
@@ -64,7 +72,7 @@ class CalcActivity : AppCompatActivity() {
                         val weight = ds.child("weight").getValue(Int::class.java)!!
                         val xe = df.format(gramSch.toFloat() / weight.toFloat())
                         val xeResult = xe.toString()
-                        gramResult.text = "Хлебных едениц в продукте: $xeResult"
+                        gramResult.text = xeResult
                     }
                 } else {
                     Toast.makeText(applicationContext, "Продукт не был найден. Можете добавить его в базу, нажав на +", Toast.LENGTH_SHORT).show()
