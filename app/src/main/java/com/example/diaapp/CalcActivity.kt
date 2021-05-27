@@ -9,6 +9,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.activity_calc.*
 import java.math.RoundingMode
 import java.text.DecimalFormat
 
@@ -45,12 +46,13 @@ class CalcActivity : AppCompatActivity() {
           retrieveWeightFromDB()
           productSearch.text.clear()
           gramSearch.text.clear()
-         /* var sum = 0.0
-          val xeSum = gramResult.text.toString().toDouble()
-          sum += xeSum
-          sumResult.text = sum.toString()*/
+
 
       }
+        addSumBtn.setOnClickListener {
+
+
+        }
 
     }
 
@@ -73,6 +75,7 @@ class CalcActivity : AppCompatActivity() {
                         val xe = df.format(gramSch.toFloat() / weight.toFloat())
                         val xeResult = xe.toString()
                         gramResult.text = xeResult
+
                     }
                 } else {
                     Toast.makeText(applicationContext, "Продукт не был найден. Можете добавить его в базу, нажав на +", Toast.LENGTH_SHORT).show()

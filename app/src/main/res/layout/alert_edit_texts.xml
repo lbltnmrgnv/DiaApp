@@ -20,7 +20,7 @@
         android:id="@+id/dish_xe_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:ems="10"
         android:hint="Сколько ХЕ содержалось в блюде"
         tools:ignore="LabelFor"

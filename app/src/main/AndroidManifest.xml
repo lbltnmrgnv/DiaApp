@@ -11,25 +11,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DiaApp">
         <activity android:name=".RecipesViewActivity"
-            android:theme="@style/SplashTheme"/>
+            android:theme="@style/Theme.DiaApp"/>
         <activity
             android:name=".SettingActivity"
-            android:theme="@style/SplashTheme" />
+            android:theme="@style/Theme.DiaApp" />
         <activity
             android:name=".AddFoodActivity"
-            android:theme="@style/SplashTheme" />
+            android:theme="@style/Theme.DiaApp" />
         <activity
             android:name=".DiaryActivity"
-            android:theme="@style/SplashTheme" />
+           />
         <activity
             android:name=".RecipesActivity"
-            android:theme="@style/SplashTheme" />
+            android:theme="@style/Theme.DiaApp" />
         <activity
             android:name=".CalcActivity"
-            android:theme="@style/SplashTheme" />
+            android:theme="@style/Theme.DiaApp" />
         <activity
             android:name=".SplashScreen"
-            android:theme="@style/SplashTheme">
+            android:theme="@style/Theme.DiaApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,7 +38,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/SplashTheme" />
+            android:theme="@style/Theme.DiaApp" />
     </application>
 
 </manifest>

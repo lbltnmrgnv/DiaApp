@@ -47,6 +47,8 @@
             android:textAlignment="center" />
 
         <Button
+            android:textColor="#FFF"
+            android:background="#00424242"
             android:id="@+id/btn_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
